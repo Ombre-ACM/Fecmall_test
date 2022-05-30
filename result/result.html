@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>FecMall接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>FecMall接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2022-05-31 00:35:42</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.868553</p>
+<p class='attribute'><strong>Status:</strong> Pass 9</p>
+
+<p class='description'>用例执行情况</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>FecMallTest</td>
+    <td>9</td>
+    <td>9</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',9)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_001_index</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 首页 {'code': 200, 'message': 'process success', 'data': {'productList': [{'one': {'name': '贝尔袖脱下肩带花边拼接女衬衫', 'sku': '32332', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '3', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/1/14/11471858072718.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '22.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/3', 'product_id': '3', 'is_in_stock': None}, 'two': {'name': '圆领女士花卉印花无袖连衣裙', 'sku': '432432', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '4', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/1/7/17147202419675158.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '22.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/4', 'product_id': '4', 'is_in_stock': None}}, {'one': {'name': '袖子信件印刷船员颈部运动衫kahaki xl', 'sku': 'p10001-kahaki-xl', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '27', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160905101021_28071.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '6.00', 'code': 'CNY'}, 'special_price': {'symbol': '￥', 'value': '5.00', 'code': 'CNY'}, 'url': '/catalog/product/27', 'product_id': '27', 'is_in_stock': None}, 'two': {'name': '意大利面条打印背面Bodycon衣服', 'sku': 'sk0002', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '9', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160606112453_71094147323202778861.JPG', 'brand_id': None, 'price': {'symbol': '￥', 'value': '33.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/9', 'product_id': '9', 'is_in_stock': None}}, {'one': {'name': '甜点圆点妇女的夏天礼服', 'sku': 'sk0003', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '8', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160804090311_12690.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '33.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/8', 'product_id': '8', 'is_in_stock': None}, 'two': {'name': '时尚之字形条纹和火焰无袖连衣裙的妇女', 'sku': 'sk0004', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '7', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160707145718_97803.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '22.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/7', 'product_id': '7', 'is_in_stock': None}}, {'one': {'name': '时髦的镶边criss十字形的妇女的礼服', 'sku': 'sk0008', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '6', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160810112221_81491.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '33.00', 'code': 'CNY'}, 'special_price': '', 'url': '/catalog/product/6', 'product_id': '6', 'is_in_stock': None}, 'two': {'name': '对时尚按钮点缀空心网状针织靴子妇女的袖口', 'sku': 'sk2001-blue-zo', 'reviw_rate_star_average': 0, 'review_count': 0, '_id': '5', 'image': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/296/0/2/01/20160722142719_52348.jpg', 'brand_id': None, 'price': {'symbol': '￥', 'value': '267.30', 'code': 'CNY'}, 'special_price': {'symbol': '￥', 'value': '143.56', 'code': 'CNY'}, 'url': '/catalog/product/5', 'product_id': '5', 'is_in_stock': None}}], 'advertiseImg': {'bigImgList': [{'imgUrl': 'http://img.fecmall.com/apphtml5/custom/home_img_1.jpg'}, {'imgUrl': 'http://img.fecmall.com/apphtml5/custom/home_img_2.jpg'}, {'imgUrl': 'http://img.fecmall.com/apphtml5/custom/home_img_3.jpg'}], 'smallImgList': [{'imgUrl': 'http://img.fecmall.com/apphtml5/custom/home_small_1.jpg'}, {'imgUrl': 'http://img.fecmall.com/apphtml5/custom/home_small_2.jpg'}]}, 'language': {'langList': [{'languageName': 'Français', 'code': 'fr', 'language': 'fr-FR'}, {'languageName': 'English', 'code': 'en', 'language': 'en-US'}, {'languageName': 'Español', 'code': 'es', 'language': 'es-ES'}, {'languageName': '中文', 'code': 'zh', 'language': 'zh-CN'}], 'currentLang': 'zh'}, 'currency': {'currencyList': {'CNY': {'code': 'CNY', 'rate': 1, 'symbol': '￥'}}, 'currentCurrency': 'CNY'}}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_002_register</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: {'email': '0638ac8097354318b931aea12174d027@qq.com', 'password': '123456', 'firstname': 'Heidy', 'lastname': 'Stanley', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '5f6e27da55e246e0be37a7136bd21ab5@qq.com', 'password': '123456', 'firstname': 'Janett', 'lastname': 'Buchanan', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': 'e4e5e81acd624edd9fe187f85390a721@qq.com', 'password': '123456', 'firstname': 'Milagro', 'lastname': 'Berg', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '9946cb93fcb445869872a4a30fc63a1b@163.com', 'password': '123456', 'firstname': 'Signe', 'lastname': 'Cross', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '4f30a498ed5549798d3f2f422fdb093b@163.com', 'password': '123456', 'firstname': 'Cherilyn', 'lastname': 'Shepard', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': 'f7e430119c4b4e5da876b825e2c231ae@qq.com', 'password': '123456', 'firstname': 'Darwin', 'lastname': 'Davis', 'is_subscribed': True}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '09a85fec0d92426792ba3e85bc87b3d4@qq.com', 'password': '123456', 'firstname': 'Gerald', 'lastname': 'Welch', 'is_subscribed': True}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '98d7f0303dc6417c9764786e3b7cde7a@163.com', 'password': '123456', 'firstname': 'Aliza', 'lastname': 'Stuart', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': 'c1b224b49c5a4cde80f796c221a20e58@qq.com', 'password': '123456', 'firstname': 'Keith', 'lastname': 'Black', 'is_subscribed': False}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+{'email': '09be683cbab6488ba0890af86fc4219d@163.com', 'password': '123456', 'firstname': 'Clifford', 'lastname': 'Sexton', 'is_subscribed': True}
+{'code': 200, 'message': 'process success', 'data': {'content': 'register success'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_003_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: {'code': 1100002, 'message': 'account login email or password is not correct', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token'}
+{'code': 1100002, 'message': 'account login email or password is not correct', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token'}
+{'code': 1100002, 'message': 'account login email or password is not correct', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token'}
+{'code': 200, 'message': 'process success', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token', 'Access-Token': '0YsC3V-pn9PVD4VyQ0GFNzYbYIb3_8RB', 'Set-Cookie': '_csrf=d8899948331dfcb08696ed226265ecd28a782295851af157bddc26f3cec5e924a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22RakjPm-Z07GHQ7nat0rN5V-51F-qaqAb%22%3B%7D; path=/; samesite=Lax; HttpOnly'}
+0YsC3V-pn9PVD4VyQ0GFNzYbYIb3_8RB
+{'code': 200, 'message': 'process success', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token', 'Access-Token': 'BBY1qzjJFGAxYiGMWl7oTB7Lk3sKab-N', 'Set-Cookie': '_csrf=5fa0be8fb77b02ee2b688e43e51fe30a23f1d027c5009f502536feb7f62b4e7da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22k81CpVIJxJf_Ln3_n2fm4p4y0DP6MZKf%22%3B%7D; path=/; samesite=Lax; HttpOnly'}
+BBY1qzjJFGAxYiGMWl7oTB7Lk3sKab-N
+{'code': 200, 'message': 'process success', 'data': []}
+{'Server': 'nginx', 'Date': 'Mon, 30 May 2022 16:35:43 GMT', 'Content-Type': 'application/json; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'PHP/7.1.13', 'Fecshop-Currency': 'CNY', 'Vary': 'Accept', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Expose-Headers': 'Origin, X-Requested-With, Content-Type, Accept, fecshop-uuid, fecshop-lang, fecshop-currency, access-token', 'Access-Token': '6aCyowmKAqa-Ty7Sj24nAACqEOmToY2I', 'Set-Cookie': '_csrf=65ba6cbb98449ca0875f91ee4adea12e6d76a2615d69c46ce7eee3ffd3ca8018a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Au1F1MyaBMdOBtRj_TRVBsT6JMk3nE59%22%3B%7D; path=/; samesite=Lax; HttpOnly'}
+6aCyowmKAqa-Ty7Sj24nAACqEOmToY2I
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_004_customer_account</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {'code': 200, 'message': 'process success', 'data': {'menuList': {'账户信息': '/customer/editaccount', '货运地址': '/customer/address', '我的订单': '/customer/order', '我的产品评论': '/customer/productreview', '我的收藏': '/customer/productfavorite'}}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_005_customer_address</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: {'code': 200, 'message': 'process success', 'data': {'addressList': [{'address_id': 1, 'first_name': 'yanjiang', 'email': '1033817498@qq.com', 'last_name': 'li', 'company': None, 'telephone': '15757825661', 'fax': None, 'street1': '杭州湾', 'street2': '', 'city': '宁波市', 'state': 'ZJ', 'area': None, 'zip': '315336', 'country': 'CN', 'customer_id': '1', 'created_at': '1653719123', 'updated_at': '1653719123', 'is_default': '1', 'stateName': '浙江省', 'countryName': 'China'}]}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_006_product_add_cart</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'code': 200, 'message': 'process success', 'data': {'items_count': 32}}
+{'code': 200, 'message': 'process success', 'data': {'items_count': 36}}
+{'code': 200, 'message': 'process success', 'data': {'items_count': 40}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_007_customer_cart</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'code': 200, 'message': 'process success', 'data': {'cart_info': {'cart_id': 3, 'store': 'appfront.fecmall.com', 'items_count': 40, 'coupon_code': None, 'shipping_method': 'fast_shipping', 'payment_method': 'paypal_standard', 'grand_total': '3643.70', 'shipping_cost': '0.00', 'coupon_cost': '0.00', 'product_total': '3643.70', 'base_grand_total': '3643.70', 'base_shipping_cost': '0.00', 'base_coupon_cost': '0.00', 'base_product_total': '3643.70', 'products': [{'item_id': 22, 'active': 1, 'product_id': '4', 'sku': '432432', 'name': '圆领女士花卉印花无袖连衣裙', 'qty': 5, 'brand_id': None, 'custom_option_sku': '', 'product_price': '22.00', 'product_row_price': 110, 'base_product_price': 22, 'base_product_row_price': 110, 'product_weight': '3.00', 'product_row_weight': 15, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/round-collar-floral-print-sleeveless-dress-for-women', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '红色', '尺码': 'M'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/1/7/17147202419675158.jpg', 'url': '/catalog/product/4', 'custom_option_info': {'颜色': '红色', '尺码': 'M'}, 'spu_options_str': '颜色: 红色,尺码: M'}, {'item_id': 23, 'active': 1, 'product_id': '10', 'sku': 'sk1000-khak', 'name': '迷你长袖开衩', 'qty': 4, 'brand_id': None, 'custom_option_sku': '', 'product_price': '38.56', 'product_row_price': 154.24, 'base_product_price': 38.56, 'base_product_row_price': 154.24, 'product_weight': '0.20', 'product_row_weight': 0.8, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/alluring-long-sleeve-open-back-draped-maxi-dress-55525232', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '黄褐色', '尺码': 'M'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160715121751_13739.jpg', 'url': '/catalog/product/10', 'custom_option_info': {'颜色': '黄褐色', '尺码': 'M'}, 'spu_options_str': '颜色: 黄褐色,尺码: M'}, {'item_id': 20, 'active': 1, 'product_id': '6', 'sku': 'sk0008', 'name': '时髦的镶边criss十字形的妇女的礼服', 'qty': 1, 'brand_id': None, 'custom_option_sku': '', 'product_price': '33.00', 'product_row_price': 33, 'base_product_price': 33, 'base_product_row_price': 33, 'product_weight': '0.00', 'product_row_weight': 0, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/stylish-striped-criss-cross-womens-dress', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '白 &amp; 黑', '尺码': 'M'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160810112221_81491.jpg', 'url': '/catalog/product/6', 'custom_option_info': {'颜色': '白 &amp; 黑', '尺码': 'M'}, 'spu_options_str': '颜色: 白 &amp; 黑,尺码: M'}, {'item_id': 21, 'active': 1, 'product_id': '1', 'sku': 'kilw0001', 'name': '肩带长袖高低日礼服', 'qty': 3, 'brand_id': None, 'custom_option_sku': '', 'product_price': '358.00', 'product_row_price': 1074, 'base_product_price': 358, 'base_product_row_price': 1074, 'product_weight': '99.00', 'product_row_weight': 297, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/off-the-shoulder-long-sleeve-high-low-day-dress', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '黑色', '尺码': 'XXL'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/1/22/12229472_1.jpg', 'url': '/catalog/product/1', 'custom_option_info': {'颜色': '黑色', '尺码': 'XXL'}, 'spu_options_str': '颜色: 黑色,尺码: XXL'}, {'item_id': 19, 'active': 1, 'product_id': '9', 'sku': 'sk0002', 'name': '意大利面条打印背面Bodycon衣服', 'qty': 6, 'brand_id': None, 'custom_option_sku': '', 'product_price': '33.00', 'product_row_price': 198, 'base_product_price': 33, 'base_product_row_price': 198, 'product_weight': '0.00', 'product_row_weight': 0, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/spaghetti-strap-print-backless-bodycon-dress', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '白色', '尺码': 'XL'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160606112453_71094147323202778861.JPG', 'url': '/catalog/product/9', 'custom_option_info': {'颜色': '白色', '尺码': 'XL'}, 'spu_options_str': '颜色: 白色,尺码: XL'}, {'item_id': 18, 'active': 1, 'product_id': '3', 'sku': '32332', 'name': '贝尔袖脱下肩带花边拼接女衬衫', 'qty': 5, 'brand_id': None, 'custom_option_sku': '', 'product_price': '22.00', 'product_row_price': 110, 'base_product_price': 22, 'base_product_row_price': 110, 'product_weight': '0.00', 'product_row_weight': 0, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/3232', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '黑色', '尺码': 'M'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/1/14/11471858072718.jpg', 'url': '/catalog/product/3', 'custom_option_info': {'颜色': '黑色', '尺码': 'M'}, 'spu_options_str': '颜色: 黑色,尺码: M'}, {'item_id': 15, 'active': 1, 'product_id': '7', 'sku': 'sk0004', 'name': '时尚之字形条纹和火焰无袖连衣裙的妇女', 'qty': 6, 'brand_id': None, 'custom_option_sku': '', 'product_price': '22.00', 'product_row_price': 132, 'base_product_price': 22, 'base_product_row_price': 132, 'product_weight': '0.00', 'product_row_weight': 0, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/fashion-zigzag-stripe-fit-and-flare-sleeveless-dress-for-women', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '白 &amp; 黑', '尺码': 'S'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160707145718_97803.jpg', 'url': '/catalog/product/7', 'custom_option_info': {'颜色': '白 &amp; 黑', '尺码': 'S'}, 'spu_options_str': '颜色: 白 &amp; 黑,尺码: S'}, {'item_id': 16, 'active': 1, 'product_id': '5', 'sku': 'sk2001-blue-zo', 'name': '对时尚按钮点缀空心网状针织靴子妇女的袖口', 'qty': 8, 'brand_id': None, 'custom_option_sku': '', 'product_price': '143.56', 'product_row_price': 1148.48, 'base_product_price': 143.56, 'base_product_row_price': 1148.48, 'product_weight': '0.00', 'product_row_weight': 0, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/pair-of-stylish-button-embellished-hollow-out-mesh-shape-knitted-boot-cuffs-for-women', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '白色', '尺码': 'M'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/2/01/20160722142719_52348.jpg', 'url': '/catalog/product/5', 'custom_option_info': {'颜色': '白色', '尺码': 'M'}, 'spu_options_str': '颜色: 白色,尺码: M'}, {'item_id': 17, 'active': 1, 'product_id': '2', 'sku': 'kilw-green', 'name': '肩带长袖高低绿色连衣裙', 'qty': 2, 'brand_id': None, 'custom_option_sku': '', 'product_price': '341.99', 'product_row_price': 683.98, 'base_product_price': 341.99, 'base_product_row_price': 683.98, 'product_weight': '88.00', 'product_row_weight': 176, 'product_volume_weight': '0.00', 'product_row_volume_weight': 0, 'product_volume': '0.00', 'product_row_volume': 0, 'product_url': '/off-the-shoulder-long-sleeve-high-low-day-dress-green', 'custom_option': 'a:0:{}', 'spu_options': {'颜色': '绿色', '尺码': 'L'}, 'img_url': 'http://img.fecmall.com/media/catalog/product/cache/bd935443df1c50537d4edaab4af5d446/150/150/1/22/12229472_3147185361598497.jpg', 'url': '/catalog/product/2', 'custom_option_info': {'颜色': '绿色', '尺码': 'L'}, 'spu_options_str': '颜色: 绿色,尺码: L'}], 'product_weight': '488.80', 'product_volume_weight': '0.00', 'product_volume': '0.00'}, 'currency': {'code': 'CNY', 'rate': 1, 'symbol': '￥'}, 'enablePaypalExpress': True}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_008_submit_order</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'code': 200, 'message': 'process success', 'data': {'redirectUrl': '/payment/paypal/standard/start', 'incrementId': 1100000011}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_009_customer_order</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: {'code': 200, 'message': 'process success', 'data': {'orderList': [{'created_at': '2022-05-31 00:35:44', 'updated_at': '2022-05-31 00:35:44', 'increment_id': '1100000011', 'order_id': '11', 'order_status': 'payment_pending', 'items_count': '40', 'total_weight': '488.80', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '3643.70', 'base_grand_total': '3643.70', 'subtotal': '3643.70', 'base_subtotal': '3643.70', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:35:36', 'updated_at': '2022-05-31 00:35:36', 'increment_id': '1100000010', 'order_id': '10', 'order_status': 'payment_pending', 'items_count': '27', 'total_weight': '473.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '2805.22', 'base_grand_total': '2805.22', 'subtotal': '2805.22', 'base_subtotal': '2805.22', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:26:32', 'updated_at': '2022-05-31 00:26:32', 'increment_id': '1100000009', 'order_id': '9', 'order_status': 'payment_pending', 'items_count': '20', 'total_weight': '176.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '1632.22', 'base_grand_total': '1632.22', 'subtotal': '1632.22', 'base_subtotal': '1632.22', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:25:31', 'updated_at': '2022-05-31 00:25:31', 'increment_id': '1100000008', 'order_id': '8', 'order_status': 'payment_pending', 'items_count': '12', 'total_weight': '176.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '1147.10', 'base_grand_total': '1147.10', 'subtotal': '1147.10', 'base_subtotal': '1147.10', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:14:10', 'updated_at': '2022-05-31 00:14:10', 'increment_id': '1100000007', 'order_id': '7', 'order_status': 'payment_pending', 'items_count': '6', 'total_weight': '176.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '893.54', 'base_grand_total': '893.54', 'subtotal': '893.54', 'base_subtotal': '893.54', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:03:25', 'updated_at': '2022-05-31 00:03:25', 'increment_id': '1100000006', 'order_id': '6', 'order_status': 'payment_pending', 'items_count': '34', 'total_weight': '1153.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '5072.87', 'base_grand_total': '5072.87', 'subtotal': '5072.87', 'base_subtotal': '5072.87', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-31 00:02:10', 'updated_at': '2022-05-31 00:02:10', 'increment_id': '1100000005', 'order_id': '5', 'order_status': 'payment_pending', 'items_count': '22', 'total_weight': '704.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '3164.92', 'base_grand_total': '3164.92', 'subtotal': '3164.92', 'base_subtotal': '3164.92', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-30 23:45:39', 'updated_at': '2022-05-30 23:45:39', 'increment_id': '1100000004', 'order_id': '4', 'order_status': 'payment_pending', 'items_count': '11', 'total_weight': '264.00', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '1289.97', 'base_grand_total': '1289.97', 'subtotal': '1289.97', 'base_subtotal': '1289.97', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-30 23:35:20', 'updated_at': '2022-05-30 23:35:20', 'increment_id': '1100000003', 'order_id': '3', 'order_status': 'payment_pending', 'items_count': '11', 'total_weight': '396.40', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '1582.99', 'base_grand_total': '1582.99', 'subtotal': '1582.99', 'base_subtotal': '1582.99', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-30 23:23:37', 'updated_at': '2022-05-30 23:23:37', 'increment_id': '1100000002', 'order_id': '2', 'order_status': 'payment_pending', 'items_count': '10', 'total_weight': '297.40', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '1224.99', 'base_grand_total': '1224.99', 'subtotal': '1224.99', 'base_subtotal': '1224.99', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'paypal_standard', 'shipping_method': 'fast_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}, {'created_at': '2022-05-30 19:46:24', 'updated_at': '2022-05-30 19:46:24', 'increment_id': '1100000001', 'order_id': '1', 'order_status': 'payment_pending', 'items_count': '3', 'total_weight': '0.20', 'order_currency_code': 'CNY', 'order_to_base_rate': '1.0000', 'grand_total': '87.68', 'base_grand_total': '87.68', 'subtotal': '87.68', 'base_subtotal': '87.68', 'subtotal_with_discount': '0.00', 'base_subtotal_with_discount': '0.00', 'checkout_method': 'standard', 'customer_id': '1', 'customer_group': None, 'customer_email': '1033817498@qq.com', 'customer_firstname': 'yanjiang', 'customer_lastname': 'li', 'customer_is_guest': '2', 'coupon_code': '', 'payment_method': 'check_money', 'shipping_method': 'free_shipping', 'tracking_number': None, 'tracking_company': None, 'shipping_total': '0.00', 'base_shipping_total': '0.00', 'customer_telephone': '15757825661', 'customer_address_country': 'CN', 'customer_address_state': 'ZJ', 'customer_address_city': '宁波市', 'customer_address_zip': '315336', 'customer_address_street1': '杭州湾', 'customer_address_street2': '', 'customer_address_state_name': None, 'customer_address_country_name': None, 'currency_symbol': '￥', 'products': None}], 'count': '11'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>9</td>
+    <td>9</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
