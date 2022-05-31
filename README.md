@@ -24,4 +24,6 @@ html报告如下
 Jenkins部分如下：
 
 ![image](https://user-images.githubusercontent.com/64000814/171139743-8677c4fa-39c2-49ff-b0af-8dd911ebe5b4.png)
-![image](https://user-images.githubusercontent.com/64000814/171139833-74911699-e2ca-4f20-939c-dc030da537d2.png)
+
+![image](https://user-images.githubusercontent.com/64000814/171145367-bb4daa80-641b-4ae5-afe4-85a01bb702cf.png)
+
