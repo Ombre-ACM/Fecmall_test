@@ -1,5 +1,5 @@
 # Fecmall_test
-一个在linux环境下部署开源平台Fecmall+Jenkins 的接口自动化项目，实现定时运行并发送测试报道
+一个在linux环境下部署开源平台Fecmall+Jenkins 的接口自动化项目，实现jenkins按设置要求自动运行测试
 
 平台官网链接： https://www.fecmall.com/
 
@@ -22,3 +22,6 @@ html报告如下
 ![image](https://user-images.githubusercontent.com/64000814/171039061-91478af2-19f8-4980-b96b-6f81e927dc1b.png)
 
 Jenkins部分如下：
+
+![image](https://user-images.githubusercontent.com/64000814/171139743-8677c4fa-39c2-49ff-b0af-8dd911ebe5b4.png)
+![image](https://user-images.githubusercontent.com/64000814/171139833-74911699-e2ca-4f20-939c-dc030da537d2.png)
