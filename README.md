@@ -25,5 +25,6 @@ Jenkins部分如下：
 
 ![image](https://user-images.githubusercontent.com/64000814/171139743-8677c4fa-39c2-49ff-b0af-8dd911ebe5b4.png)
 
-![image](https://user-images.githubusercontent.com/64000814/171145367-bb4daa80-641b-4ae5-afe4-85a01bb702cf.png)
+![image](https://user-images.githubusercontent.com/64000814/171145727-8cc19228-012a-4017-a2fb-82f1bcd01ac7.png)
+
 
