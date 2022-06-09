@@ -12,7 +12,7 @@ python代码从上而下依次为 测试用例管理，配置，数据，关键�
 ![image](https://user-images.githubusercontent.com/64000814/171037849-909943da-cf9e-424a-859e-b5f515123881.png)
 
 新的测试文件fecmall_testcase_ddt 通过ddt管理接口的测试用例，增加了接口的正向，逆向测试，包含请求头参数正确与否、请求参数必须参数，可选参数的
-缺失与参数类型异常等，最终增加到41个测试用例（加上请求头实际用例管理在50以上）
+缺失与参数类型异常，重复提交请求等，最终增加到41个测试用例（加上请求头实际用例管理在50以上）
 
 ![image](https://user-images.githubusercontent.com/64000814/172884966-8a12f86a-f0bd-46bc-b1b7-149c786b21d5.png)
 
