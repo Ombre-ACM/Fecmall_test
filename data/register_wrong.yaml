@@ -1,0 +1,107 @@
+# 邮箱已被注册
+-
+  data:
+    email: "987654321@qq.com"
+    password: "123456"
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register fail'
+
+# 缺email
+-
+  data:
+    email:
+    password: "123456"
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: False
+  message: 'account register data is invalid'
+
+# 缺密码
+-
+  data:
+    email: "987654322111000@qq.com"
+    password:
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register data is invalid'
+
+# 缺firstname
+-
+  data:
+    email: "987654321021100@qq.com"
+    password: "123456"
+    firstname:
+    lastname: "zhang"
+    is_subscribed: False
+  message: 'account register data is invalid'
+
+# 缺 lastname
+-
+  data:
+    email: "987654321002110@qq.com"
+    password: "123456"
+    firstname: "xiaoming"
+    lastname:
+    is_subscribed: True
+  message: 'account register data is invalid'
+
+# 缺 是否订阅  系统直接接收为 FALSE，注册成功，这里不需要
+#-
+#  data:
+#    email: "987654321000@qq.com"
+#    password: "123456"
+#    firstname: "xiaoming"
+#    lastname: "zhang"
+#    is_subscribed:
+#  message: 'account register data is invalid'
+
+# 邮箱过长
+-
+  data:
+    email: "98765432dvniufhehhodmvdnvohuhvNCKjdicuhfu2165465152514131564984651651849816516549841@qq.com"
+    password: "123456"
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register fail'
+
+# 密码过短  过长 'password must >= 6 and <= 30'
+-
+  data:
+    email: "987654322242721@qq.com"
+    password: "12345"
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register data is invalid'
+
+-
+  data:
+    email: "9876543224222721@qq.com"
+    password: "12345216516515168465121846514846515468468564684"
+    firstname: "xiaoming"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register data is invalid'
+
+# 注册名过长  1-30
+-
+  data:
+    email: "987654322442721@qq.com"
+    password: "123456"
+    firstname: "xcbjskchuichkjnuhfuihkvbfgrgfcnvjndihvuhjnkdvuk"
+    lastname: "zhang"
+    is_subscribed: True
+  message: 'account register data is invalid'
+
+-
+  data:
+    email: "987654322442721@qq.com"
+    password: "123456"
+    firstname: "xiaoming"
+    lastname: "xcbjskchuichkjnuhfuihkvbfgrgfcnvjndihvuhjnkdvuk"
+    is_subscribed: True
+  message: 'account register data is invalid'

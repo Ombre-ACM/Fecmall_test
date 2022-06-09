@@ -1,0 +1,157 @@
+# 缺 非必须参数
+-
+  data:
+    custom_option:
+      my_color:
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "1"
+    qty: 1
+  message: 'process success'
+
+# 缺 非必须参数
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size:
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "2"
+    qty: 1
+  message: 'process success'
+
+# 缺 非必须参数
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2:
+      my_size3: "S3"
+    product_id: "3"
+    qty: 1
+  message: 'process success'
+
+# 缺 非必须参数
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3:
+    product_id: "4"
+    qty: 1
+  message: 'process success'
+
+# 缺 必须参数 产品 id
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id:
+    qty: 1
+  message: "request post param: 'product_id' and 'qty' can not empty"
+
+# 缺 必须参数 数量
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "1"
+    qty:
+  message: "request post param: 'product_id' and 'qty' can not empty"
+
+# 非必须参数 颜色异常，购物车添加成功，需要与产品，开发讨论 确定为 bug
+-
+  data:
+    custom_option:
+      my_color: "redingggg"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "5"
+    qty: 1
+  message: 'process success'
+
+# 非必须参数 大小异常，购物车添加成功，需要与产品，开发讨论 确定为 bug
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "Sf"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "6"
+    qty: 1
+  message: 'process success'
+
+# 非必须参数 大小异常，购物车添加成功，需要与产品，开发讨论 确定为 bug
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2ff"
+      my_size3: "S3"
+    product_id: "7"
+    qty: 1
+  message: 'process success'
+
+# 非必须参数 大小异常，购物车添加成功，需要与产品，开发讨论 确定为 bug
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3ff"
+    product_id: "8"
+    qty: 1
+  message: 'process success'
+
+# 必须参数 产品id 为误
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "111684"
+    qty: 1
+  message: 'product add to cart fail'
+
+# 必须参数 数量 为0
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "1"
+    qty: 0
+  message: "request post param: 'product_id' and 'qty' can not empty"
+
+# 必须参数 数量 类型 错误  文档要求 int 数据类型，这里为 str, 需要与开发 产品讨论为 bug
+-
+  data:
+    custom_option:
+      my_color: "red"
+      my_size: "S"
+      my_size2: "S2"
+      my_size3: "S3"
+    product_id: "4"
+    qty: "1"
+  message: 'process success'
+
+

@@ -17,3 +17,6 @@ def get_register_data(iterations=1):
     return schema.create(iterations=iterations)
 
 
+# test = get_register_data(1)
+# print(test)
+
