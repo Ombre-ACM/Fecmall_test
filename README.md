@@ -5,7 +5,13 @@
 
 linux环境为centos7 64位，采用docker的方式安装Fecmall, 
 容器具体截图：
-![image](https://user-images.githubusercontent.com/64000814/171036939-f7f3afb5-d0d1-4a08-80ba-ee9a28a7a3be.png)
+![image](https://user-images.githubusercontent.com/64000814/172886819-24cddf4e-ef8a-4658-ab4c-2d075f4d5f22.png)
+
+
+安装好后打开界面如下：
+![image](https://user-images.githubusercontent.com/64000814/172886066-a84ea12f-0b87-4f74-90ec-32224a1b3f18.png)
+
+
 python代码从上而下依次为 测试用例管理，配置，数据，关键字，日志及报告存放处
 
 实现了注册，登录，查询用户，添加购物车，查询购物车，发送订单，查询订单等测试
